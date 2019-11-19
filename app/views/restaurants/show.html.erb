@@ -20,5 +20,17 @@
   <%= @restaurant.category %>
 </p>
 
+
+  <strong>Reviews:</strong>
+
+  <% @restaurant.reviews.each do |siel_is_a_homo| %>
+    <p><%= siel_is_a_homo.content %> </p>
+    <p><%= siel_is_a_homo.rating %></p>
+  <% end  %>
+
+
+
+
+<%= link_to 'Add New Review', new_restaurant_review_path(@restaurant) %> |
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
